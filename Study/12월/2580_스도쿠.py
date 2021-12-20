@@ -108,7 +108,7 @@ while blank:
     else:
         zero = 'Z'
     blank.append([zero,y,x])
-    blank = sorted(blank)
+
 
 for i in range(9):
     print(*graph[i])
