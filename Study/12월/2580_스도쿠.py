@@ -1,7 +1,7 @@
 import sys
 sys.stdin = open('input.txt')
 input = sys.stdin.readline
-import heapq
+
 graph = []
 xgraph = [0]*9 # [9, 2, 2, 1, 2, 1, 2, 2, 1]
 ygraph = [0]*9 # [2, 3, 2, 2, 3, 2, 2, 3, 3]
