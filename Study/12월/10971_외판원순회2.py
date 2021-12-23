@@ -9,7 +9,7 @@ graph =[]
 for _ in range(N):
     graph.append(list(map(int,input().split())))
 every = list(permutations(nums,N)) # 0,1,2,3 으로 만들수 있는 모든 순열 만들기
-
+# print(every)
 result = int(1e9)   # 큰값을 하나 만들어 놓는다
 for cycle in every: # 아까만든 순열을 하나씩 돌면서
     count =0        # 길의 합을 구해준다
