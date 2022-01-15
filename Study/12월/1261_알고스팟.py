@@ -13,16 +13,16 @@ for _ in range(N):
 def bfs():
     global result,visited
     Q = []
+    INF = 1e9
     heapq.heappush(Q,[0,0,0])
-    visited = [[10000]*M for _ in range(N)] # visited를 큰 값으로 만든다
+    visited = [[INF]*M for _ in range(N)] # visited를 큰 값으로 만든다
                                             # 이 값은 벽을 몇개 부섰는지로 바꿀 수 있다.
-    visited[0][0] = 1
-    result= []
+    result= 0
 
     while Q:
         wall,y,x = heapq.heappop(Q)
         if y==N-1 and x==M-1:           # 값이 우리가 찾는값이면
-            result.append(wall)         # result에 넣어준다-> 한개일텐데 일단 넣어준다
+            result=wall         # result에 넣어준다-> 한개일텐데 일단 넣어준다
 
         dy = [0,0,-1,1]
         dx = [1,-1,0,0]
@@ -42,4 +42,5 @@ def bfs():
                     heapq.heappush(Q,[wall+1,ny,nx])
 
 bfs()
-print(min(result))
+print(result)
+
