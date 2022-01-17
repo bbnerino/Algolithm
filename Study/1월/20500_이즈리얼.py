@@ -6,28 +6,31 @@ sys.stdin = open('input.txt')
 N = int(input())
 dp = [0]*(1516)
 # 0 1 2 3 4 5  6  7  8  9   10  11  12   13   14
-# 0,0,1,1,4,9,19,40,83,167.338,679,1361,2726,5457
-
+# 0,0,1,1,3,5, 11,21,43,85,171,341,683,1365 ,2731
+# 0
 dp[1]= 0
 dp[2]= 1
 dp[3]= 1
-dp[4]= 4
-# dp[5] =
 
-for i in range(5,1516):
-    dp[i] = (dp[i-1]*2 + i-4)%1000000007
-# print(dp[6])
-count=0
-def dfs(strnum):
-    global count
-    if len(strnum) == N:
-        return
-    for one_five in ['1','5']:
-        newnum = strnum + one_five
-        if int(newnum)%15 ==0 and len(set(newnum))!=1:
-            count+=1
-            # print(newnum)
-        dfs(newnum)
+for i in range(4,1516):
+    if i%2==0:
+        dp[i]= (dp[i-1]*2 +1)%1000000007
+    else:
+        dp[i]= (dp[i-1]*2 -1)%1000000007
 
-dfs("")
-print(count)
+# count=0
+# def dfs(strnum):
+#     global count
+#     if len(strnum) == N:
+#         return
+#     for one_five in ['1','5']:
+#         newnum = strnum + one_five
+#         if int(newnum)%15 ==0 and len(newnum)==N:
+#             count+=1
+#             result.append(newnum)
+#             # print(newnum)
+#         dfs(newnum)
+#
+# dfs("")
+
+print(dp[N])
