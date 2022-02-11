@@ -4,7 +4,7 @@ sys.stdin = open('input.txt')
 N = int(input())
 
 nums =[1,2,3,5,7,9] # 마지막 수가 짝수이면 소수가 아니니 빼주는데
-                    # 2는 첫자리로는 가능합니다.
+                    # 2는 첫자리로는 가능합니다. 소수는 중요합니다
 
 def dfs(strnum):
     if len(strnum)==N:      # N자리 숫자면

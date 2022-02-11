@@ -5,7 +5,7 @@ input = sys.stdin.readline
 N = int(input())
 graph = sorted(list(map(int,input().split())))
 
-s, e = 0,N-1
+s, e = 0,N-1 # start,end
 
 # [-99, -2, -1, 4, 98]
 result   =[0,N-1,graph[0]+graph[1]]
