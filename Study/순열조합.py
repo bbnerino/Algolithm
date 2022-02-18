@@ -9,7 +9,7 @@ m = int(input())
 data = [0]*n
 
 def recur(cur):
-    # 종료조건 => 어떻게 되면 이 recur 함수를 종료를 시키겠다!!
+    # 종료조건 => 어떻게 되면 이 recur 함수를 종료를 시키겠다!!!
     if cur == n:
         print(data)
         return
@@ -21,8 +21,6 @@ def recur(cur):
 
 recur(0)
 '''
-
-
 
 
 '''
@@ -75,15 +73,17 @@ n = 3
 m = 6
 data = [0]*n
 
-def recur(cur,start):
-    if cur==n:
-        print(data)
-        return 
-    for i in range(start,m):
-        data[cur] = i
-        recur(cur+1,i+1)
 
-recur(0,0)
+def recur(cur, start):
+    if cur == n:
+        print(data)
+        return
+    for i in range(start, m):
+        data[cur] = i
+        recur(cur+1, i+1)
+
+
+recur(0, 0)
 
 
 # 4번 템플릿
@@ -92,6 +92,7 @@ recur(0,0)
 n = int(input())
 m = int(input())
 data = []
+
 
 def recur(cur, cnt):
     # 종료 조건
@@ -102,7 +103,7 @@ def recur(cur, cnt):
         # print('')
         print(data)
         return
-        
+
     # cur 깊이가 우리가 쓸 숫자 끝까지 도착하면 return
     if cur == m:
         return
@@ -112,5 +113,6 @@ def recur(cur, cnt):
     recur(cur+1, cnt+1)
     data.pop()
     recur(cur+1, cnt)
+
 
 recur(0, 0)
