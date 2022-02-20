@@ -9,7 +9,7 @@ m = int(input())
 data = [0]*n
 
 def recur(cur):
-    # 종료조건 => 어떻게 되면 이 recur 함수를 종료를 시키겠다!!!
+    # 종료조건 => 어떻게 되면 이 recur 함수를 종료를 시키겠다!!!@
     if cur == n:
         print(data)
         return
