@@ -18,27 +18,21 @@ def bfs(start):
     visited[0] = True
     visited[start] = True
     Q.append(start)
-    cnt = 0
+    dist = [0] * (N+1) # 시작 노드부터 거리
     while Q :
+        # 한명씩 확인하면서 node의 길이를 구한다
         tmp = Q.popleft()
-        flag= False
         for i in graph[tmp]:
-            if visited[i] ==False:
-                Q.append(i)
-                visited[i] = True
-                flag =True
-        if flag:
-            cnt+=1
-    if False in visited:
-        cnt = 0
-    return cnt
+            if not visited[i] : # 아직 친구등록이 안되어있으면
+                Q.append(i) # Q 추가 해주고
+                visited[i] = True  # 친구 등록해준다
+                dist[i] = dist[tmp] + 1 # 1->3 -> 2  ?? 2가된다 .
+    return dist
 
-small = 1000000
+small = 50
 result =[]
 for i in range(1,N+1):
-    tmp = bfs(i)
-    if tmp ==0:
-        pass
+    tmp = max(bfs(i))
     if score[tmp]<small:
         small = score[tmp]
         result = [i]
