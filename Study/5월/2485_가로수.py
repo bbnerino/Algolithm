@@ -2,17 +2,13 @@ import sys
 sys.stdin = open('input.txt')
 
 N = int(input())
-graph = []
 difference  = []
-tmp = 0
+before = 0
 for _ in range(N):
     this = int(input())
-    graph.append(this)
-    if tmp!=0:
-        difference.append(this-tmp)
-    tmp = this
-
-
+    if before!=0:
+        difference.append(this-before)
+    before = this
 
 # 최소 공배수를 구해서 각 차이의 N-1 개 씩해서 더하면 총개수를 구할 수 있다.
 
