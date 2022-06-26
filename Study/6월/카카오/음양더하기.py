@@ -1,5 +1,5 @@
 absolutes = [4,7,12]
-signs = ['true','false','true']
+signs = [True,False,True]
 
 def solution(absolutes, signs):
     answer = 0
