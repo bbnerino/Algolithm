@@ -1,5 +1,5 @@
-nums = [1,2,3,4]
-
+nums = [1,2,7,6,4]
+from itertools import combinations
 
 def prime_num(n):
     result = list(range(2,n+1))
@@ -10,11 +10,14 @@ def prime_num(n):
     return result
 
 def solution(nums):
-    answer = 0
-    prime_num(sum(nums))
+    primenums = prime_num(3*max(nums))
+    print(primenums)
+    result =[]
+    combis = list(combinations(nums,3))
+    for combi in combis :
+        tmp=sum(combi)
+        if tmp in primenums and tmp not in result:
+            result.append(tmp)
+    return len(result)
 
-
-
-    return answer
-
-solution(nums)
+print(solution(nums))
