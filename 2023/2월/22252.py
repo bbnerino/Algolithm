@@ -7,6 +7,9 @@ T = int(input())
 dict = {}
 result = 0
 
+def _heappush (heap,items):
+  for item in items:
+    heapq.heappush(heap,int(item)*-1)
 
 for _ in range(T):
   input_list = list(input().split())
@@ -18,9 +21,7 @@ for _ in range(T):
     tmp = []
     if PERSON in dict.keys():
       tmp = dict[PERSON]
-      
-    for item in input_list:
-      heapq.heappush(tmp,int(item)*-1)
+    _heappush(tmp,input_list)
     dict[PERSON] = tmp  
   elif TYPE=="2":
     for _ in range(COUNT):
